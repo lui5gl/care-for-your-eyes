@@ -34,7 +34,7 @@ export default function Home() {
   }, [current_hour, current_minute, next_break]);
 
   return (
-    <main className="min-h-screen bg-beige text-white flex items-center justify-center flex-col gap-5 select-none px-5">
+    <main className="min-h-screen bg-neutral-800 text-white flex items-center justify-center flex-col gap-5 select-none px-5">
       <h1 className="font-bold text-3xl">Care for your eyes</h1>
       <section className="bg-white/5 p-5 rounded-lg w-full max-w-xl grid gap-5 place-content-center">
         <span className="font-bold text-9xl">
