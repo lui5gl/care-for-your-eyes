@@ -13,7 +13,6 @@ export default function Home() {
     intervalId = setInterval(() => {
       let now = new Date();
       let minute = now.getMinutes();
-      let seconds = now.getMinutes();
 
       SetCurrentHour(now.getHours());
       SetCurrentMinute(minute);
@@ -26,7 +25,7 @@ export default function Home() {
         SetNextBreak(60 - minute);
       }
 
-      if (next_break === 0 && seconds === 0) {
+      if (next_break === 0) {
         notification_sound.current?.play();
       }
       return () => clearInterval(intervalId);
