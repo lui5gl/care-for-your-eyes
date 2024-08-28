@@ -9,12 +9,12 @@ export default function Home() {
   const notification_sound = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       let now = new Date();
+      let hour = now.getHours();
       let minute = now.getMinutes();
 
-      SetCurrentHour(now.getHours());
+      SetCurrentHour(hour);
       SetCurrentMinute(minute);
 
       if (minute <= 20) {
@@ -25,11 +25,11 @@ export default function Home() {
         SetNextBreak(60 - minute);
       }
 
-      if (next_break === 0) {
+      if (minute === 0 || minute === 20 || minute === 40 || minute === 60) {
         notification_sound.current?.play();
       }
-      return () => clearInterval(intervalId);
-    });
+    }, 1000);
+    return () => clearInterval(intervalId);
   }, [current_hour, current_minute, next_break]);
 
   return (
