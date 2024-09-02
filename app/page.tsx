@@ -31,7 +31,7 @@ export default function Home() {
         minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
       );
 
-      if (minute === 0 || minute === 20 || minute === 40 || minute === 60) {
+      if (next_break === 0) {
         notification_sound.current?.play();
       }
     }, 1000);
@@ -39,9 +39,9 @@ export default function Home() {
   });
 
   return (
-    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-green-500 to-green-800 px-5 text-white">
+    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-500 to-neutral-700 px-5 text-white">
       <h1 className="text-4xl font-bold">Care for your eyes</h1>
-      <section className="rounded-md bg-white/25 px-20 py-10">
+      <section className="rounded-md bg-white/10 px-20 py-10">
         <span className="text-9xl font-bold">
           {`${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}`}
         </span>
