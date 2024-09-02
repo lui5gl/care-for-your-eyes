@@ -42,7 +42,7 @@ export default function Home() {
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-500 to-neutral-700 px-5 text-white">
       <h1 className="text-4xl font-bold">Care for your eyes</h1>
       <section className="rounded-md bg-white/10 px-20 py-10">
-        <span className="text-9xl font-bold">
+        <span className="drop-shadow-timer text-9xl font-bold">
           {`${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}`}
         </span>
         <p className="animate-pulse text-center text-xl font-semibold">
