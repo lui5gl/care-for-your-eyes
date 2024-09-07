@@ -40,13 +40,13 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-500 to-neutral-700 px-5 text-white">
-      <h1 className="text-4xl font-bold">Care for your eyes</h1>
+      <h1 className="text-4xl font-bold">Care for your 👀</h1>
       <section className="rounded-md bg-white/10 px-20 py-10">
-        <span className="drop-shadow-timer text-9xl font-bold">
+        <span className="text-9xl font-bold drop-shadow-timer">
           {`${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}`}
         </span>
         <p className="animate-pulse text-center text-xl font-semibold">
-          Next break in {next_break} minutes
+          Next break in {next_break} minutes 🙀
         </p>
       </section>
       <audio src="/sounds/bell_sound.mp3" ref={notification_sound} />
