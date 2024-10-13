@@ -14,7 +14,7 @@ export default function Home() {
       ? 20 - currentMinute
       : currentMinute <= 40
         ? 40 - currentMinute
-        : 60 - currentMinute,
+        : 60 - currentMinute
   );
 
   const notification_sound = useRef<HTMLAudioElement>(null);
@@ -27,16 +27,18 @@ export default function Home() {
 
       setHour(hour);
       setMinute(minute);
-      setNextBreak(
-        minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
-      );
 
-      if (next_break === 0) {
+      const calculatedNextBreak =
+        minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute;
+
+      setNextBreak(calculatedNextBreak);
+
+      if (calculatedNextBreak === 0) {
         notification_sound.current?.play();
       }
     }, 1000);
     return () => clearInterval(intervalId);
-  });
+  }, []);
 
   return (
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-500 to-neutral-700 px-5 text-white">
