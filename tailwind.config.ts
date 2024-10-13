@@ -8,8 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        box: "10px 10px 0 rgb(255 255 255 / 0.1)",
+      },
       dropShadow: {
-        timer: "5px 5px 0 rgb(255 255 255 / 0.2)",
+        font: "5px 5px 0 rgb(255 255 255 / 0.25)",
       },
     },
   },
