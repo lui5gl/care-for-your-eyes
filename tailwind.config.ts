@@ -9,11 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        box: "10px 10px 0 rgb(255 255 255 / 0.1)",
-        button: "5px 5px 0 rgb(255 255 255 / 0.1)",
+        box: "8px 8px 0 rgb(255 255 255 / 0.5)",
       },
       dropShadow: {
-        font: "5px 5px 0 rgb(255 255 255 / 0.25)",
+        font: "6px 6px 0 rgb(255 255 255 / 0.2)",
       },
     },
   },
