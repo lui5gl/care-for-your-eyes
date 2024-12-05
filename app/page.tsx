@@ -28,7 +28,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isSoundAllowed, minute, next_break]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-5 bg-gradient-to-br from-neutral-600 to-neutral-800">
