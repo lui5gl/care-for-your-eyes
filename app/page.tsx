@@ -46,7 +46,7 @@ export default function Home() {
           className="flex items-center justify-center gap-1 rounded-sm bg-neutral-100 p-1 px-4 py-2 font-semibold text-neutral-800 hover:shadow-button"
           onClick={() => setIsSoundAllowed(true)}
         >
-          <Image src="/icons/bell.png" alt="Bell" width={16} height={16} />
+          <Image src="/icons/bell.svg" alt="Bell" width={16} height={16} />
           Enable sound
         </button>
       )}
