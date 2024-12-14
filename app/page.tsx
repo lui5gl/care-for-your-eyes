@@ -31,7 +31,7 @@ export default function Home() {
   }, [isSoundAllowed, minute, next_break]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-5 bg-gradient-to-br from-neutral-600 to-neutral-800">
+    <main className="flex min-h-screen flex-col select-none items-center justify-center gap-5 bg-gradient-to-br from-neutral-600 to-neutral-800">
       <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-box">
         Care for your eyes
       </h1>
@@ -43,7 +43,7 @@ export default function Home() {
       </span>
       {!isSoundAllowed && (
         <button
-          className="flex items-center justify-center gap-1 rounded-sm bg-neutral-100 p-1 px-4 py-2 font-semibold text-neutral-800 hover:shadow-button"
+          className="flex items-center justify-center gap-1 rounded-sm bg-neutral-100 p-1 px-4 py-2 font-semibold text-neutral-800 hover:shadow-button transition-all duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none"
           onClick={() => setIsSoundAllowed(true)}
         >
           <Image src="/icons/bell.svg" alt="Bell" width={16} height={16} />
