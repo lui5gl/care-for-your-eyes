@@ -7,13 +7,12 @@ export default function Home() {
   const now = new Date();
   const [hour, setHour] = useState(now.getHours());
   const [minute, setMinute] = useState(now.getMinutes());
-
-  const [next_break, setNextBreak] = useState(
+  const [nextBreak, setNextBreak] = useState(
     minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
   );
 
   const [isSoundAllowed, setIsSoundAllowed] = useState(false);
-  const notification_sound_ref = useRef<HTMLAudioElement>(null);
+  const notificationSoundRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,16 +21,22 @@ export default function Home() {
       setHour(now.getHours());
       setMinute(now.getMinutes());
 
-      const minute = now.getMinutes();
-      setNextBreak(
-        minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
-      );
+      const currentMinute = now.getMinutes();
+      const newNextBreak =
+        currentMinute <= 20
+          ? 20 - currentMinute
+          : currentMinute <= 40
+            ? 40 - currentMinute
+            : 60 - currentMinute;
 
-      if (isSoundAllowed && minute == 0) notification_sound_ref.current?.play();
+      setNextBreak(newNextBreak);
+
+      if (isSoundAllowed && newNextBreak === 0)
+        notificationSoundRef.current?.play();
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isSoundAllowed, minute, nextBreak]);
 
   return (
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-3 bg-gradient-to-br from-neutral-600 to-neutral-800">
@@ -42,7 +47,7 @@ export default function Home() {
         {hour.toString().padStart(2, "0")}:{minute.toString().padStart(2, "0")}
       </span>
       <span className="animate-pulse text-xl font-semibold text-neutral-100">
-        Next break in {next_break} minutes
+        Next break in {nextBreak} minutes
       </span>
 
       {!isSoundAllowed && (
@@ -60,7 +65,7 @@ export default function Home() {
         </div>
       )}
 
-      <audio src="/sounds/bell_sound.mp3" ref={notification_sound_ref} />
+      <audio src="/sounds/bell_sound.mp3" ref={notificationSoundRef} />
     </main>
   );
 }
