@@ -21,12 +21,13 @@ export default function Home() {
 
       setHour(now.getHours());
       setMinute(now.getMinutes());
+
+      const minute = now.getMinutes();
       setNextBreak(
         minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
       );
 
-      if (isSoundAllowed && next_break == 0)
-        notification_sound_ref.current?.play();
+      if (isSoundAllowed && minute == 0) notification_sound_ref.current?.play();
     }, 1000);
 
     return () => clearInterval(interval);
