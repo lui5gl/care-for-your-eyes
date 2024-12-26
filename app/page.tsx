@@ -43,7 +43,7 @@ export default function Home() {
       <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-box">
         Care for your eyes
       </h1>
-      <span className="drop-shadow-font text-9xl font-bold text-neutral-100">
+      <span className="drop-shadow-font drop-shadow-text text-9xl font-bold text-neutral-100">
         {hour.toString().padStart(2, "0")}:{minute.toString().padStart(2, "0")}
       </span>
       <span className="animate-pulse text-xl font-semibold text-neutral-100">
