@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const now = new Date();
@@ -38,6 +38,16 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [isSoundAllowed, minute, nextBreak]);
 
+  useEffect(() => {
+    let title = "Care for your eyes";
+
+    if (!isSoundAllowed) {
+      title = "🔇 " + title;
+    }
+
+    document.title = title;
+  }, [isSoundAllowed]);
+
   return (
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-3 bg-gradient-to-b from-zinc-600 to-zinc-800">
       <h1 className="rounded-sm bg-zinc-100 px-8 py-4 text-5xl font-bold text-zinc-800 shadow-box">
@@ -50,19 +60,17 @@ export default function Home() {
         Next break in {nextBreak} minutes
       </span>
 
-      {!isSoundAllowed && (
-        <div className="group absolute left-5 top-5 flex items-center justify-center gap-2">
-          <button
-            className="flex items-center justify-center rounded-sm bg-zinc-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
-            onClick={() => setIsSoundAllowed(true)}
-          >
-            <Image src="/icons/bell.svg" alt="Bell" width={18} height={18} />
-          </button>
-          <div className="animate-pulse text-zinc-50/75 transition-all duration-150 group-hover:animate-none group-hover:opacity-0">
-            This site needs notifications enabled.
-          </div>
-        </div>
-      )}
+      <button
+        className="absolute left-5 top-5 flex items-center justify-center rounded-sm bg-zinc-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
+        onClick={() => setIsSoundAllowed(!isSoundAllowed)}
+      >
+        <Image
+          src={`/icons/${isSoundAllowed ? "bell-ringing" : "bell-off"}.svg`}
+          alt="Bell"
+          width={20}
+          height={20}
+        />
+      </button>
 
       <audio src="/sounds/bell_sound.mp3" ref={notificationSoundRef} />
     </main>
