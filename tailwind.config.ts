@@ -13,7 +13,7 @@ const config: Config = {
         button: "4px 4px 0 rgb(255 255 255 / 0.5)",
       },
       dropShadow: {
-        text: "4px 4px 0 rgb(255 255 255 / 0.25)",
+        text: "6px 6px 0 rgb(255 255 255 / 0.25)",
       },
     },
   },
