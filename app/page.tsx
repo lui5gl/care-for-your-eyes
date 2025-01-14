@@ -40,10 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     let title = "Care for your eyes";
-
-    if (!isSoundAllowed) {
-      title = "🔇 " + title;
-    }
+    if (!isSoundAllowed) title = "🔇 " + title;
 
     document.title = title;
   }, [isSoundAllowed]);
