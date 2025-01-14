@@ -65,7 +65,7 @@ export default function Home() {
         onClick={() => setIsSoundAllowed(!isSoundAllowed)}
       >
         <Image
-          src={`/icons/${isSoundAllowed ? "bell-ringing" : "bell-off"}.svg`}
+          src={`/icons/${isSoundAllowed ? "bell-off" : "bell-ringing"}.svg`}
           alt="Bell"
           width={20}
           height={20}
