@@ -45,24 +45,24 @@ export default function Home() {
   }, [isSoundAllowed]);
 
   return (
-    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-3 bg-gradient-to-b from-zinc-600 to-zinc-800">
-      <h1 className="rounded-sm bg-zinc-100 px-8 py-4 text-5xl font-bold text-zinc-800 shadow-box">
+    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-600 to-neutral-900">
+      <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-box">
         Care for your eyes
       </h1>
-      <span className="drop-shadow-font text-9xl font-bold text-zinc-100 drop-shadow-text">
+      <span className="drop-shadow-font text-9xl font-bold text-neutral-100 drop-shadow-text">
         {hour.toString().padStart(2, "0")}:{minute.toString().padStart(2, "0")}
       </span>
-      <span className="animate-pulse text-xl font-semibold text-zinc-100">
+      <span className="animate-pulse text-xl font-semibold text-neutral-100">
         Next break in {nextBreak} minutes
       </span>
 
       <button
-        className="absolute left-5 top-5 flex items-center justify-center rounded-sm bg-zinc-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
+        className="absolute left-5 top-5 flex items-center justify-center rounded-sm bg-neutral-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
         onClick={() => setIsSoundAllowed(!isSoundAllowed)}
       >
         <Image
           src={`/icons/${isSoundAllowed ? "bell-off" : "bell-ringing"}.svg`}
-          alt="Bell"
+          alt="Activate/Deactivate sound"
           width={20}
           height={20}
         />
