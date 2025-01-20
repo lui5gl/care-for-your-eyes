@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-600 to-neutral-900">
-      <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-box">
+      <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-background">
         Care for your eyes
       </h1>
       <span className="drop-shadow-font text-9xl font-bold text-neutral-100 drop-shadow-text">
