@@ -12,12 +12,12 @@ export default function Home() {
   );
 
   const [isSoundAllowed, setIsSoundAllowed] = useState(false);
+
   const notificationSoundRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-
       setHour(now.getHours());
       setMinute(now.getMinutes());
 
@@ -28,7 +28,6 @@ export default function Home() {
           : currentMinute <= 40
             ? 40 - currentMinute
             : 60 - currentMinute;
-
       setNextBreak(newNextBreak);
 
       if (isSoundAllowed && newNextBreak === 0)
@@ -36,7 +35,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isSoundAllowed, minute, nextBreak]);
+  }, [notificationSoundRef]);
 
   useEffect(() => {
     let title = "Care for your eyes";
