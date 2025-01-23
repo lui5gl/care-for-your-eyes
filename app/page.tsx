@@ -45,8 +45,8 @@ export default function Home() {
   }, [isSoundAllowed]);
 
   return (
-    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-gradient-to-b from-neutral-600 to-neutral-900">
-      <h1 className="rounded-sm bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-background">
+    <main className="flex min-h-screen select-none flex-col items-center justify-center gap-2 bg-linear-to-b from-neutral-600 to-neutral-900">
+      <h1 className="rounded-xs bg-neutral-100 px-8 py-4 text-5xl font-bold text-neutral-800 shadow-background">
         Care for your eyes
       </h1>
       <span className="drop-shadow-font text-9xl font-bold text-neutral-100 drop-shadow-text">
@@ -57,7 +57,7 @@ export default function Home() {
       </span>
 
       <button
-        className="absolute left-5 top-5 flex items-center justify-center rounded-sm bg-neutral-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
+        className="absolute left-5 top-5 flex items-center justify-center rounded-xs bg-neutral-100 p-2 transition-all duration-150 hover:shadow-button active:translate-x-1 active:translate-y-1 active:shadow-none"
         onClick={() => setIsSoundAllowed(!isSoundAllowed)}
       >
         <Image

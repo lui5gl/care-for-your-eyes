@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --shadow-background: 8px 8px 0 rgb(245 245 245 / 0.5);
+  --shadow-button: 4px 4px 0 rgb(245 245 245 / 0.5);
+
+  --drop-shadow-text: 6px 6px 0 rgb(245 245 245 / 0.25);
+}
