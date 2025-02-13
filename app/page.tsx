@@ -6,9 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Home() {
   const [hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
-  const [nextBreak, setNextBreak] = useState(
-    minute <= 20 ? 20 - minute : minute <= 40 ? 40 - minute : 60 - minute,
-  );
+  const [nextBreak, setNextBreak] = useState(0);
 
   const [isSoundAllowed, setIsSoundAllowed] = useState(false);
 
