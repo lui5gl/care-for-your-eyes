@@ -1,12 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
   const [nextBreak, setNextBreak] = useState(0);
+
+  useEffect(() => {
+    const now = new Date();
+    setHour(now.getHours());
+    setMinute(now.getMinutes());
+
+    const currentMinute = now.getMinutes();
+
+    const newNextBreak =
+      currentMinute <= 20
+        ? 20 - currentMinute
+        : currentMinute <= 40
+          ? 40 - currentMinute
+          : 60 - currentMinute;
+    setNextBreak(newNextBreak);
+  }, []);
 
   const [isSoundAllowed, setIsSoundAllowed] = useState(false);
 
