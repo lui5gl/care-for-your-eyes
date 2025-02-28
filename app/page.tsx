@@ -48,7 +48,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [hour, minute, nextBreak, isSoundAllowed, notificationSoundRef]);
+  }, []);
 
   useEffect(() => {
     let title = "Care for your eyes";
